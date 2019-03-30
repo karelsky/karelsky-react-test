@@ -1,0 +1,12 @@
+.no-punct {
+	list-style-type: none;
+	padding: 0;
+}
+.rates-cell {
+	text-align: center;
+	display: inline-block; width: 50%;
+}
+
+.no-auth {
+	display: none;
+}

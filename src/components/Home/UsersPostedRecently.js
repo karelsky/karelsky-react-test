@@ -8,9 +8,11 @@ const UsersPostedRecently = props => {
 
     let date = new Date();
     date.setDate(date.getDate() - 1);
+    let day = date.getDate();
+    if (day < 10) day = '0' + day;
     let month = date.getMonth() + 1;
     if (month < 10) month = '0' + month;
-    let formattedDateYesterday = date.getFullYear() + '-' + month + '-' + date.getDate();
+    const formattedDateYesterday = date.getFullYear() + '-' + month + '-' + day;
    
     let users = [props.currentUser];
 
@@ -29,7 +31,7 @@ const UsersPostedRecently = props => {
               }
             };
 
-            let datePosted = article.updatedAt.substring(0,10);
+            const datePosted = article.updatedAt.substring(0,10);
             if (datePosted === formattedDateYesterday && !users.includes(article.author.username)) {
               users.push(article.author.username);
               return (

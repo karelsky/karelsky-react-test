@@ -1,0 +1,12 @@
+0. Setup the environment
+1. Rename articles to tasks globally in project so that user will create/read/edit not articles but tasks (just name in text, not conceptually)
+2. Rework description field in article so that it will become a link to uploaded google document:
+  - in add article interface - transform text input field with placeholder “What's this article about?” to file upload input
+  - after form submit textual data should be posted to the original api and file multipart/data should be uploaded to the Google Drive
+  - after file successfully submitted to Google Drive - take link from response and update previously created article description field with link to that new file
+  - in edit article interface add functions to remove file (file link in api and file from Google Drive) if attached and add new file if not attached or removed
+  - if article is deleted - delete file from Google Drive
+3. In authorized user sidebar (on the right, below tag cloud) add EUR/USD currency table - parse data from any api and display rates for last 10 days in a simple table with 2 columns - date | rate
+4. In authorized user sidebar (on the right, below currency ticker table) add alphabetical list of all users posted articles yesterday (from now() = time of page rendering), username should be the link to the user’s profile
+5. Before each username add + (plus) icon which should add subscription to that user’s feed
+6. If authorized user is subscribed to the user in the sidebar, add - (minus) icon to unfollow him(her).
